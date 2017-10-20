@@ -1,14 +1,14 @@
 let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue']
 
 class Driver {
-  constructor(name, startDate){
+  constructor(name, start){
     this.name = name
-    this.startDate = new Date(startDate)
+    this.start = new date(start)
   }
 
-  yearsExperienceFromBeginningOf(year){
+  function yearsExperienceFromBeginningOf(year){
     let endDate = new Date(year, 1, 1)
-    let totalYears = (endDate - this.startDate)/(365*24*60*60*1000)
+    let totalYears = (endDate - this.start)/(365*24*60*60*1000)
     return parseInt(totalYears)
   }
 }
@@ -18,15 +18,15 @@ class Route {
     this.beginningLocation = beginningLocation
     this.endingLocation = endingLocation
   }
-  avenueToInteger(avenue){
+  function avenueToInteger(avenue){
     return eastWest.indexOf(avenue)
   }
-  blocksTravelled(){
+  function blocksTravelled(){
     let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal)
     let verticalDistance = this.endingLocation.vertical - this.beginningLocation.vertical
     return (Math.abs(horizontalDistance))
   }
-  estimatedTime(peak){
+  function estimatedTime(peak){
     if(peak){
       return this.blocksTravelled()/2
     }else{
