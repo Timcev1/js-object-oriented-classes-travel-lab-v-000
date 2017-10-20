@@ -21,4 +21,16 @@ class Route {
   function avenueToInteger(avenue){
     return eastWest.indexOf(avenue)
   }
+  function blocksTravelled(){
+    let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal)
+    let verticalDistance = this.endingLocation.vertical - this.beginningLocation.vertical
+    return (Math.abs(horizontalDistance))
+  }
+  function estimatedTime(peak){
+    if(peak){
+      return this.blocksTravelled()/2
+    }else{
+      return this.blocksTravelled()/3
+    }
+  }
 }
