@@ -6,7 +6,7 @@ class Driver {
     this.start = new date(start)
   }
 
-  function yearsExperienceFromBeginningOf(year){
+   yearsExperienceFromBeginningOf(year){
     let endDate = new Date(year, 1, 1)
     let totalYears = (endDate - this.start)/(365*24*60*60*1000)
     return parseInt(totalYears)
@@ -18,15 +18,15 @@ class Route {
     this.beginningLocation = beginningLocation
     this.endingLocation = endingLocation
   }
-  function avenueToInteger(avenue){
+   avenueToInteger(avenue){
     return eastWest.indexOf(avenue)
   }
-  function blocksTravelled(){
+   blocksTravelled(){
     let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal)
     let verticalDistance = this.endingLocation.vertical - this.beginningLocation.vertical
     return (Math.abs(horizontalDistance))
   }
-  function estimatedTime(peak){
+   estimatedTime(peak){
     if(peak){
       return this.blocksTravelled()/2
     }else{
